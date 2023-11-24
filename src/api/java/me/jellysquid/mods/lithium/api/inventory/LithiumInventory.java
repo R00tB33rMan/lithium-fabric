@@ -52,7 +52,7 @@ public interface LithiumInventory extends Inventory {
      */
     default void generateLootLithium() {
         if (this instanceof LootableContainerBlockEntity) {
-            ((LootableContainerBlockEntity) this).checkLootInteraction(null);
+            ((LootableContainerBlockEntity) this).generateLoot(null);
         }
         if (this instanceof VehicleInventory) {
             ((VehicleInventory) this).generateInventoryLoot(null);
