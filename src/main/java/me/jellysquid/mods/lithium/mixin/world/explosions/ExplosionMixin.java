@@ -81,12 +81,11 @@ public abstract class ExplosionMixin {
     private boolean explodeAirBlocks;
 
     private int minY, maxY;
-
     @Inject(
-            method = "<init>(Lnet/minecraft/world/World;Lnet/minecraft/entity/Entity;Lnet/minecraft/entity/damage/DamageSource;Lnet/minecraft/world/explosion/ExplosionBehavior;DDDFZLnet/minecraft/world/explosion/Explosion$DestructionType;)V",
+            method = "<init>(Lnet/minecraft/world/World;Lnet/minecraft/entity/Entity;DDDFZLnet/minecraft/world/explosion/Explosion$DestructionType;)V",
             at = @At("TAIL")
     )
-    private void init(World world, Entity entity, DamageSource damageSource, ExplosionBehavior explosionBehavior, double d, double e, double f, float g, boolean bl, Explosion.DestructionType destructionType, CallbackInfo ci) {
+    private void init(World world, Entity entity, double d, double e, double f, float g, boolean bl, Explosion.DestructionType destructionType, CallbackInfo ci) {
         this.minY = this.world.getBottomY();
         this.maxY = this.world.getTopY();
 
